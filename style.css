@@ -739,3 +739,7 @@ div.comment:first-of-type {
 .comment-reply-title small a:hover {
 	text-decoration: underline;
 }
+.navbar-nav a{
+    color: white;
+}
+
