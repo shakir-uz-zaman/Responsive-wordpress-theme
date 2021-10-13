@@ -23,7 +23,7 @@
         <?php
             wp_list_comments(
                 array(
-                    'avatar_size' =>120,
+                    'avatar_size' =>70,
                     'style' => 'div',
                     )
                 );

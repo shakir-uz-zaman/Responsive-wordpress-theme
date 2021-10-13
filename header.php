@@ -12,10 +12,28 @@
 <?php
 	wp_head();
 ?>
+<script>
+	<?php
+	$posts = get_posts([
+        'post_type' => 'ad_shortcodes',
+        'post_status' => 'publish',
+        'numberposts' => -1
+        // 'order'    => 'ASC'
+      ]);
+    //echo "<pre>";
+    //var_dump($posts);
+    foreach($posts as $post){
+
+        $header_section_code = get_field("header_section_code", $post->ID , true);
+        echo $header_section_code;
+
+    }
+	?>
+</script>
 </head>
 
 <body>
-
+<?php wp_body_open(); ?>
     <header class="header text-center">
 	    <a class="site-title pt-lg-4 mb-0" hrep="index.html">
 			<?php echo  get_bloginfo('name'); ?>

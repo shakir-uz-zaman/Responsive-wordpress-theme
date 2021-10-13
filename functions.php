@@ -51,8 +51,51 @@ function wporg_com_num ( $out, $num ) { // Two parameter as in filter described
     return $out;
 }
 
+// Our custom post type function
+function create_posttype_ad_shortcode() {
 
+    register_post_type( 'ad_shortcodes',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Ad  Manager Shortcode' ),
+                'singular_name' => __( 'Google Ad Shortcode' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'google-ad-shortcode'),
+            'show_in_rest' => true,
+            'supports' => ['title', 'custom-fields'],
 
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype_ad_shortcode' );
+// Our custom post type function
+// function create_posttype() {
 
+//     register_post_type( 'movies',
+//     // CPT Options
+//         array(
+//             'labels' => array(
+//                 'name' => __( 'Movies' ),
+//                 'singular_name' => __( 'Movie' )
+//             ),
+//             'public' => true,
+//             'has_archive' => true,
+//             'rewrite' => array('slug' => 'movies'),
+//             'show_in_rest' => true,
+//             'supports' => ['title', 'editor', 'custom-fields'],
+
+//         )
+//     );
+// }
+// // Hooking up our function to theme setup
+// add_action( 'init', 'create_posttype' );
+
+/*
+* Creating a function to create our CPT
+*/
 
 ?>
